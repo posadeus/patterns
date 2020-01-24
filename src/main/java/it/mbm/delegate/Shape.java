@@ -1,4 +1,4 @@
-package it.mbm.window;
+package it.mbm.delegate;
 
 public interface Shape
 {

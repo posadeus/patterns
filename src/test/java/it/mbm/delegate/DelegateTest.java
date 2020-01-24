@@ -1,11 +1,11 @@
-package it.mbm.window;
+package it.mbm.delegate;
 
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class WindowTest
+public class DelegateTest
 {
   @Test
   public void rectangularWindow()
