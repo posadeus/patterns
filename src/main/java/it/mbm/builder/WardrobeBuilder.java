@@ -2,6 +2,8 @@ package it.mbm.builder;
 
 import java.util.List;
 
+import static java.util.Collections.emptyList;
+
 public class WardrobeBuilder implements Builder<Wardrobe>
 {
   private final int width;
@@ -16,6 +18,9 @@ public class WardrobeBuilder implements Builder<Wardrobe>
     this.width = width;
     this.height = height;
     this.depth = depth;
+    this.doors = emptyList();
+    this.ledges = emptyList();
+    this.drawers = emptyList();
   }
 
   public Wardrobe build()

@@ -5,12 +5,39 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Collections.emptyList;
 import static java.util.List.of;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class BuilderTest
 {
+  @Test
+  public void simpleWardrobeConstruction()
+  {
+    Door door = new Door(30, 176, 2);
+
+    List<Door> doors = new ArrayList<>();
+    doors.add(door);
+
+    assertThat(new WardrobeBuilder(30, 180, 50)
+                   .withDoors(doors)
+                   .build(),
+               is(new Wardrobe(30, 180, 50, doors, emptyList(), emptyList())));
+  }
+
+  @Test
+  public void simpleWardrobeAlreadyBuilt()
+  {
+    Door door = new Door(30, 176, 2);
+
+    List<Door> doors = new ArrayList<>();
+    doors.add(door);
+
+    assertThat(new SimpleWardrobeBuilder().build(),
+               is(new Wardrobe(30, 180, 50, doors, emptyList(), emptyList())));
+  }
+
   @Test
   public void complexWardrobeConstruction()
   {
