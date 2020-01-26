@@ -34,7 +34,21 @@ public class BuilderTest
     List<Door> doors = new ArrayList<>();
     doors.add(door);
 
-    assertThat(new SimpleWardrobeBuilder().build(),
+    assertThat(CreateWardrobe.createSimpleWardrobe(new StandardWardrobeBuilder()),
+               is(new Wardrobe(30, 180, 50, doors, emptyList(), emptyList())));
+  }
+
+  @Test
+  public void simpleWardrobeBuilder()
+  {
+    Door door = new Door(30, 176, 2);
+
+    List<Door> doors = new ArrayList<>();
+    doors.add(door);
+
+    assertThat(new WardrobeBuilder(30, 180, 50)
+                   .withDoors(doors)
+                   .build(),
                is(new Wardrobe(30, 180, 50, doors, emptyList(), emptyList())));
   }
 
@@ -109,6 +123,38 @@ public class BuilderTest
     drawers.add(drawer3);
 
     assertThat(new ComplexDoubleDoorWardrobeWithTieRackBuilder().build(),
+               is(new Wardrobe(60, 180, 50, doors, ledges, drawers)));
+  }
+
+  @Test
+  public void complexWardrobeBuilder()
+  {
+    Door door1 = new Door(30, 176, 2);
+    Door door2 = new Door(30, 176, 2);
+
+    List<Door> doors = new ArrayList<>();
+    doors.add(door1);
+    doors.add(door2);
+
+    Ledge ledge1 = new Ledge(56, 2, 48);
+    Ledge ledge2 = new Ledge(56, 2, 48);
+
+    List<Ledge> ledges = new ArrayList<>();
+    ledges.add(ledge1);
+    ledges.add(ledge2);
+
+    TieRack tieRack = new TieRack(12);
+
+    Drawer drawer1 = new Drawer(54, 20, 46, tieRack);
+    Drawer drawer2 = new Drawer(54, 20, 46, null);
+    Drawer drawer3 = new Drawer(54, 20, 46, null);
+
+    List<Drawer> drawers = new ArrayList<>();
+    drawers.add(drawer1);
+    drawers.add(drawer2);
+    drawers.add(drawer3);
+
+    assertThat(CreateWardrobe.createComplexWardrobe(new StandardWardrobeBuilder()),
                is(new Wardrobe(60, 180, 50, doors, ledges, drawers)));
   }
 }
