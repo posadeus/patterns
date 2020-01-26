@@ -2,19 +2,19 @@ package it.mbm.creational.abstractfactory;
 
 import java.util.Objects;
 
-public class WaterPistol implements Weapon
+public class Potato
 {
-  private int capacity;
+  private int grams;
 
-  public WaterPistol(int capacity)
+  public Potato(int grams)
   {
-    this.capacity = capacity;
+    this.grams = grams;
   }
 
   @Override public String toString()
   {
-    return "WaterPistol{" +
-        "capacity=" + capacity +
+    return "Potato{" +
+        "grams=" + grams +
         '}';
   }
 
@@ -24,12 +24,12 @@ public class WaterPistol implements Weapon
       return true;
     if (o == null || getClass() != o.getClass())
       return false;
-    WaterPistol that = (WaterPistol) o;
-    return capacity == that.capacity;
+    Potato potato = (Potato) o;
+    return grams == potato.grams;
   }
 
   @Override public int hashCode()
   {
-    return Objects.hash(capacity);
+    return Objects.hash(grams);
   }
 }

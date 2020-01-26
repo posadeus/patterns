@@ -2,15 +2,15 @@ package it.mbm.creational.abstractfactory;
 
 public class CreateWeapon
 {
-  private WaterWeaponFactory waterWeaponFactory;
+  private WeaponFactory weaponFactory;
 
-  public CreateWeapon(WaterWeaponFactory waterWeaponFactory)
+  public CreateWeapon(WeaponFactory weaponFactory)
   {
-    this.waterWeaponFactory = waterWeaponFactory;
+    this.weaponFactory = weaponFactory;
   }
 
-  public WaterPistol createWeapon()
+  public Weapon createWeapon()
   {
-    return waterWeaponFactory.createWeapon();
+    return weaponFactory.createWeapon();
   }
 }

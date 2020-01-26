@@ -1,6 +1,6 @@
 package it.mbm.creational.abstractfactory;
 
-public class WaterWeaponFactory
+public class WaterWeaponFactory extends WeaponFactory
 {
   private int capacity;
 
