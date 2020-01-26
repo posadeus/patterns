@@ -1,26 +1,29 @@
-package it.mbm.builder;
+package it.mbm.creational.builder;
 
 import java.util.Objects;
 
-public class Ledge
+public class Drawer
 {
   private final int width;
   private final int height;
   private final int depth;
+  private TieRack tieRack;
 
-  public Ledge(int width, int height, int depth)
+  public Drawer(int width, int height, int depth, TieRack tieRack)
   {
     this.width = width;
     this.height = height;
     this.depth = depth;
+    this.tieRack = tieRack;
   }
 
   @Override public String toString()
   {
-    return "Ledge{" +
+    return "Drawer{" +
         "width=" + width +
         ", height=" + height +
         ", depth=" + depth +
+        ", tieRack=" + tieRack +
         '}';
   }
 
@@ -30,14 +33,15 @@ public class Ledge
       return true;
     if (o == null || getClass() != o.getClass())
       return false;
-    Ledge ledge = (Ledge) o;
-    return width == ledge.width &&
-        height == ledge.height &&
-        depth == ledge.depth;
+    Drawer drawer = (Drawer) o;
+    return width == drawer.width &&
+        height == drawer.height &&
+        depth == drawer.depth &&
+        Objects.equals(tieRack, drawer.tieRack);
   }
 
   @Override public int hashCode()
   {
-    return Objects.hash(width, height, depth);
+    return Objects.hash(width, height, depth, tieRack);
   }
 }

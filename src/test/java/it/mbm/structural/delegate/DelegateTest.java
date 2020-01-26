@@ -1,4 +1,4 @@
-package it.mbm.delegate;
+package it.mbm.structural.delegate;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package it.mbm.builder;
+package it.mbm.creational.builder;
 
 import java.util.List;
 import java.util.Objects;

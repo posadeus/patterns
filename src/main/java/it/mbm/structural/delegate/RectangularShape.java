@@ -1,4 +1,4 @@
-package it.mbm.delegate;
+package it.mbm.structural.delegate;
 
 public class RectangularShape implements Shape
 {

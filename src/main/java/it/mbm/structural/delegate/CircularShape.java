@@ -1,4 +1,4 @@
-package it.mbm.delegate;
+package it.mbm.structural.delegate;
 
 import static java.lang.Math.PI;
 

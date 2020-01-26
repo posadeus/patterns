@@ -1,4 +1,4 @@
-package it.mbm.builder;
+package it.mbm.creational.builder;
 
 public class TieRackBuilder implements Builder<TieRack>
 {
