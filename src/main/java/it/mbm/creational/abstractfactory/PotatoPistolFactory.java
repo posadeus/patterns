@@ -9,11 +9,11 @@ public class PotatoPistolFactory extends WeaponFactory
   private List<Potato> potatoes;
   private RandomGenerator<Integer> randomGenerator;
 
-  public PotatoPistolFactory(int capacity)
+  public PotatoPistolFactory(int capacity, RandomGenerator<Integer> randomGenerator)
   {
     this.capacity = capacity;
     this.potatoes = new ArrayList<>();
-    this.randomGenerator = new IntegerRandomGenerator();
+    this.randomGenerator = randomGenerator;
   }
 
   @Override public PotatoPistol createWeapon()

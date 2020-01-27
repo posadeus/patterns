@@ -34,7 +34,7 @@ public class AbstractFactoryTest
       will(returnValue(50));
     }});
 
-    assertThat(new CreateWeapon(new PotatoPistolFactory(2)).createWeapon(),
+    assertThat(new CreateWeapon(new PotatoPistolFactory(2, randomGenerator)).createWeapon(),
                is(new PotatoPistol(of(new Potato(50), new Potato(50)))));
   }
 }
